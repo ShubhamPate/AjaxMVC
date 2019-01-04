@@ -1,0 +1,16 @@
+﻿<script src="~/scripts/jquery-1.10.2.js"></script>
+<script src="~/scripts/jquery.unobtrusive-ajax.js"></script>
+<h2>Register</h2>
+Page Last Accessed : @DateTime.Now.ToString()           // here note that Ajax form is updated but time is not updated
+<br/><br/>
+@using (Ajax.BeginForm("Register",new AjaxOptions() {
+    HttpMethod = "Post",
+    UpdateTargetId = "result"}))
+{
+    <div>
+        Name : <input type="text" name="txtName" />
+        <button>Submit</button>
+    </div>
+    <div id="result">
+    </div>
+}
